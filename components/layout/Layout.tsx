@@ -7,20 +7,13 @@ interface Props {
   children: JSX.Element;
 }
 export const Layout: FC<Props> = ({ title = "OpenJira", children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Head>
         <title>{title}</title>
       </Head>
-      <Navbar
-        isSidebarOpen={isSidebarOpen}
-        setIsSidebarOpen={setIsSidebarOpen}
-      />
-      <Sidebar
-        isSidebarOpen={isSidebarOpen}
-        setIsSidebarOpen={setIsSidebarOpen}
-      />
+      <Navbar />
+      <Sidebar />
       <Box sx={{ padding: "10px 20px" }}>{children}</Box>
     </Box>
   );

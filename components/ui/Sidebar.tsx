@@ -12,17 +12,9 @@ import React, { FC } from "react";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 const menuItems = ["Inbox", "Starred", "Send Email", "Drafts"];
 
-interface Props {
-  isSidebarOpen: boolean;
-  setIsSidebarOpen: (item: boolean) => void;
-}
-
-export const Sidebar: FC<Props> = ({ isSidebarOpen, setIsSidebarOpen }) => {
-  const handleOpenSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+export const Sidebar: FC = () => {
   return (
-    <Drawer anchor="left" open={isSidebarOpen} onClose={handleOpenSidebar}>
+    <Drawer anchor="left">
       <Box sx={{ width: 250 }}>
         <Box sx={{ padding: "5px 10px" }}>
           <Typography variant="h4">Menu</Typography>
