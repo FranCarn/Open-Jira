@@ -8,13 +8,16 @@ import {
   ListItemText,
   Divider,
 } from "@mui/material";
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
+import { uiReducer } from "../../context/ui/uiReducer";
+import { UIContext } from "../../context/ui";
 const menuItems = ["Inbox", "Starred", "Send Email", "Drafts"];
 
 export const Sidebar: FC = () => {
+  const { sideMenuOpen, closeSideMenu } = useContext(UIContext);
   return (
-    <Drawer anchor="left">
+    <Drawer anchor="left" open={sideMenuOpen} onClose={closeSideMenu}>
       <Box sx={{ width: 250 }}>
         <Box sx={{ padding: "5px 10px" }}>
           <Typography variant="h4">Menu</Typography>
