@@ -9,26 +9,7 @@ interface Props {
   children: JSX.Element;
 }
 const INITIAL_STATE: InitialState = {
-  entries: [
-    {
-      _id: uuidv4(),
-      description: "Lek1 chorro devolve a william",
-      status: "pending",
-      createdAt: Date.now(),
-    },
-    {
-      _id: uuidv4(),
-      description: "A neo le encanta el pito",
-      status: "in-progress",
-      createdAt: Date.now() - 100000,
-    },
-    {
-      _id: uuidv4(),
-      description: "Timo no te la vas a cojer vive en otro pais",
-      status: "finished",
-      createdAt: Date.now() - 100000000,
-    },
-  ],
+  entries: [],
 };
 
 export const EntriesProvider: FC<Props> = ({ children }) => {
