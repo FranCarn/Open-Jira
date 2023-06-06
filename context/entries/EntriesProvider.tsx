@@ -12,22 +12,19 @@ const INITIAL_STATE: InitialState = {
   entries: [
     {
       _id: uuidv4(),
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas eligendi officiis nam illum hic beatae ratione est, deleniti consequatur eveniet veniam alias magni suscipit dolorum possimus sequi fugit ipsam incidunt!",
+      description: "Lek1 chorro devolve a william",
       status: "pending",
       createdAt: Date.now(),
     },
     {
       _id: uuidv4(),
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit sequi fugit ipsam incidunt!",
+      description: "A neo le encanta el pito",
       status: "in-progress",
       createdAt: Date.now() - 100000,
     },
     {
       _id: uuidv4(),
-      description:
-        " Quas eligendi officiis nam illum hic beatae ratione est, deleniti consequatur eveniet veniam alias magni suscipit dolorum possimus sequi fugit ipsam incidunt!",
+      description: "Timo no te la vas a cojer vive en otro pais",
       status: "finished",
       createdAt: Date.now() - 100000000,
     },

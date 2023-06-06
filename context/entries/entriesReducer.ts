@@ -15,6 +15,7 @@ export const entriesReducer = (
         ...state,
         entries: [...state.entries, action.payload],
       };
+
     case "Entries - Entry Updated":
       return {
         ...state,
