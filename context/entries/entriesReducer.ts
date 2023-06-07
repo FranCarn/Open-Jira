@@ -3,7 +3,8 @@ import { InitialState } from "./EntriesProvider";
 
 type EntriesActionType =
   | { type: "Entries - Adding Entry"; payload: Entry }
-  | { type: "Entries - Entry Updated"; payload: Entry };
+  | { type: "Entries - Entry Updated"; payload: Entry }
+  | { type: "Entries - Charging Initial Data"; payload: Entry[] };
 
 export const entriesReducer = (
   state: InitialState,
@@ -26,6 +27,11 @@ export const entriesReducer = (
           }
           return entry;
         }),
+      };
+    case "Entries - Charging Initial Data":
+      return {
+        ...state,
+        entries: [...action.payload],
       };
     default:
       return state;
