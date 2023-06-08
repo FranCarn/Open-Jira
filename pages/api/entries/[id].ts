@@ -14,7 +14,8 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   const { id } = req.query;
-  if (mongoose.isValidObjectId(id)) {
+
+  if (!mongoose.isValidObjectId(id)) {
     return res.status(400).json({ message: "Invalid ID" });
   }
 
@@ -29,6 +30,7 @@ export default function handler(
 
 const updateEntry = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const { id } = req.query;
+
   await db.connect();
   const entryToUpdate = await Entry.findById(id);
   if (!entryToUpdate) {
