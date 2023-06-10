@@ -9,6 +9,7 @@ import {
 import { Entry } from "../../interfaces/entry";
 import { UIContext } from "../../context/ui";
 import { useRouter } from "next/router";
+import { dateFunctions } from "../../utils";
 
 interface Props {
   entry: Entry;
@@ -41,7 +42,9 @@ export const EntryCard: FC<Props> = ({ entry }) => {
         <CardActions
           sx={{ display: "flex", justifyContent: "end", paddingRight: 2 }}
         >
-          <Typography variant="body2"></Typography>
+          <Typography variant="body2">
+            {dateFunctions.getFormatTimeToNow(entry.createdAt)}
+          </Typography>
         </CardActions>
       </CardActionArea>
     </Card>

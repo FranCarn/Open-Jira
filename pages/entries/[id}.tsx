@@ -24,6 +24,7 @@ import { Entry, EntryStatus } from "../../interfaces/entry";
 import { dbEntries } from "../../database";
 import { EntriesContext } from "../../context/entries";
 import { useRouter } from "next/router";
+import { dateFunctions } from "../../utils";
 
 const validStatus: EntryStatus[] = ["pending", "in-progress", "finished"];
 interface Props {
@@ -70,7 +71,7 @@ const EntryPage: FC<Props> = ({ entry }) => {
             <Card>
               <CardHeader
                 title="Entry"
-                subheader={`Created at ${entry.createdAt} minutes`}
+                subheader={dateFunctions.getFormatTimeToNow(entry.createdAt)}
               />
               <CardContent>
                 <TextField
