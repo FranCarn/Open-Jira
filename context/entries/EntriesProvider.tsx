@@ -57,6 +57,10 @@ export const EntriesProvider: FC<Props> = ({ children }) => {
     dispatch({ type: "Entries - Charging Initial Data", payload: data });
   };
 
+  const deleteEntry = async (id: string) => {
+    const { data } = await entriesApi.delete<Entry>(`/entries/${id}`);
+    dispatch({ type: "Entries - Delete Entry", payload: data });
+  };
   useEffect(() => {
     refreshEntries();
   }, []);
@@ -67,6 +71,7 @@ export const EntriesProvider: FC<Props> = ({ children }) => {
         ...state,
         addNewEntry,
         updateEntry,
+        deleteEntry,
       }}
     >
       {children}

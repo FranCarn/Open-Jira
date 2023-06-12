@@ -31,7 +31,7 @@ interface Props {
   entry: Entry;
 }
 const EntryPage: FC<Props> = ({ entry }) => {
-  const { updateEntry } = useContext(EntriesContext);
+  const { updateEntry, deleteEntry } = useContext(EntriesContext);
   const router = useRouter();
   const [inputValue, setInputValue] = useState(entry.description);
   const [touched, setTouched] = useState(false);
@@ -63,6 +63,10 @@ const EntryPage: FC<Props> = ({ entry }) => {
     router.push("/");
   };
 
+  const onDeleteEntry = () => {
+    deleteEntry(entry._id);
+    router.push("/");
+  };
   return (
     <Layout title={inputValue.substring(0, 20) + "..."}>
       <>
@@ -122,6 +126,7 @@ const EntryPage: FC<Props> = ({ entry }) => {
             right: 30,
             backgroundColor: "error.dark",
           }}
+          onClick={onDeleteEntry}
         >
           <DeleteOutlinedIcon />
         </IconButton>
