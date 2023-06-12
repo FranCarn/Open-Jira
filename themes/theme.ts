@@ -42,7 +42,7 @@ export const darkTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          background: "#4a148c",
+          background: "#434B4d",
         },
       },
     },
